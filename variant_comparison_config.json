@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-05-17T14:57:37.208411",
+  "variants": [
+    {
+      "id": 1,
+      "name": "MINIMAL_MODEL",
+      "model_name": "minimal_cnn",
+      "description": "Baseline: 3 Conv-Schichten, Flatten",
+      "parameters": 33648394,
+      "logs_directory": "logs/minimal_cnn/"
+    },
+    {
+      "id": 2,
+      "name": "V1",
+      "model_name": "v1_minimal_with_bn",
+      "description": "MINIMAL mit BatchNorm",
+      "parameters": 33649290,
+      "logs_directory": "logs/v1_minimal_with_bn/"
+    },
+    {
+      "id": 3,
+      "name": "V2",
+      "model_name": "v2_minimal_bn_gap",
+      "description": "V1 mit GlobalAveragePooling statt Flatten",
+      "parameters": 103050,
+      "logs_directory": "logs/v2_minimal_bn_gap/"
+    },
+    {
+      "id": 4,
+      "name": "V3",
+      "model_name": "v3_double_conv_bn",
+      "description": "Doppelte Conv-Layer pro Block (32-32, 64-64, 128-128)",
+      "parameters": 297706,
+      "logs_directory": "logs/v3_double_conv_bn/"
+    },
+    {
+      "id": 5,
+      "name": "V4",
+      "model_name": "v4_deeper_filters",
+      "description": "V3 + 256-Filter Block",
+      "parameters": 619178,
+      "logs_directory": "logs/v4_deeper_filters/"
+    },
+    {
+      "id": 6,
+      "name": "V5",
+      "model_name": "v5_deeper_dense",
+      "description": "V4 + tiefere Dense-Schichten (256\u2192128)",
+      "parameters": 684970,
+      "logs_directory": "logs/v5_deeper_dense/"
+    },
+    {
+      "id": 7,
+      "name": "V6",
+      "model_name": "v6_with_dropout_03",
+      "description": "V5 + Dropout(0.3) Regularisierung",
+      "parameters": 684970,
+      "logs_directory": "logs/v6_with_dropout_03/"
+    },
+    {
+      "id": 8,
+      "name": "V7",
+      "model_name": "v7_five_conv_blocks",
+      "description": "5 Conv-Bl\u00f6cke (mit 512-Block)",
+      "parameters": 2492202,
+      "logs_directory": "logs/v7_five_conv_blocks/"
+    },
+    {
+      "id": 9,
+      "name": "V8",
+      "model_name": "v8_five_conv_dropout",
+      "description": "V7 mit Dropout(0.3)",
+      "parameters": 2492202,
+      "logs_directory": "logs/v8_five_conv_dropout/"
+    },
+    {
+      "id": 10,
+      "name": "V9",
+      "model_name": "v9_with_512_dense",
+      "description": "V8 + Dense(512) f\u00fcr mehr Kapazit\u00e4t",
+      "parameters": 2754858,
+      "logs_directory": "logs/v9_with_512_dense/"
+    },
+    {
+      "id": 11,
+      "name": "BEST_CNN",
+      "model_name": "9_conv_layer_cnn",
+      "description": "Baseline: 5 Conv-Bl\u00f6cke, Dense(256), Dropout(0.5)",
+      "parameters": 2492202,
+      "logs_directory": "logs/9_conv_layer_cnn/"
+    },
+    {
+      "id": 12,
+      "name": "V10",
+      "model_name": "v10_best_cnn_lite",
+      "description": "BEST_CNN ohne 512-Block (4 Conv-Bl\u00f6cke)",
+      "parameters": 1244458,
+      "logs_directory": "logs/v10_best_cnn_lite/"
+    },
+    {
+      "id": 13,
+      "name": "V11",
+      "model_name": "v11_best_cnn_deeper_dense",
+      "description": "BEST_CNN mit Dense(512\u2192256) + Dropout(0.3)",
+      "parameters": 2754858,
+      "logs_directory": "logs/v11_best_cnn_deeper_dense/"
+    },
+    {
+      "id": 14,
+      "name": "V12",
+      "model_name": "v12_with_dense_bn",
+      "description": "BEST_CNN + BatchNorm in Dense-Schicht",
+      "parameters": 2493226,
+      "logs_directory": "logs/v12_with_dense_bn/"
+    }
+  ],
+  "hyperparameters": {
+    "batch_size": 16,
+    "epochs": 100,
+    "learning_rate": 0.0001,
+    "optimizer": "Adam",
+    "loss": "categorical_crossentropy",
+    "data_augmentation": [
+      "Translation",
+      "Flip",
+      "Rotation",
+      "Zoom"
+    ],
+    "note": "Hyperparameter sind konstant \u00fcber alle Varianten"
+  }
+}

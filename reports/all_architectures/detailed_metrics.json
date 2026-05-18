@@ -1,0 +1,156 @@
+{
+  "MINIMAL_MODEL": {
+    "model_name": "minimal_cnn",
+    "description": "Baseline: 3 Conv-Schichten, Flatten",
+    "test_accuracies_per_fold": [
+      0.5839909911155701
+    ],
+    "test_accuracy_mean": 0.5839909911155701,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/minimal_cnn"
+  },
+  "V1": {
+    "model_name": "v1_minimal_with_bn",
+    "description": "MINIMAL mit BatchNorm",
+    "test_accuracies_per_fold": [
+      0.45885005593299866
+    ],
+    "test_accuracy_mean": 0.45885005593299866,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v1_minimal_with_bn"
+  },
+  "V2": {
+    "model_name": "v2_minimal_bn_gap",
+    "description": "V1 mit GlobalAveragePooling statt Flatten",
+    "test_accuracies_per_fold": [
+      0.45236754417419434
+    ],
+    "test_accuracy_mean": 0.45236754417419434,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v2_minimal_bn_gap"
+  },
+  "V3": {
+    "model_name": "v3_double_conv_bn",
+    "description": "Doppelte Conv-Layer pro Block (32-32, 64-64, 128-128)",
+    "test_accuracies_per_fold": [
+      0.7068771123886108
+    ],
+    "test_accuracy_mean": 0.7068771123886108,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v3_double_conv_bn"
+  },
+  "V4": {
+    "model_name": "v4_deeper_filters",
+    "description": "V3 + 256-Filter Block",
+    "test_accuracies_per_fold": [
+      0.7514092326164246
+    ],
+    "test_accuracy_mean": 0.7514092326164246,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v4_deeper_filters"
+  },
+  "V5": {
+    "model_name": "v5_deeper_dense",
+    "description": "V4 + tiefere Dense-Schichten (256\u2192128)",
+    "test_accuracies_per_fold": [
+      0.8066516518592834
+    ],
+    "test_accuracy_mean": 0.8066516518592834,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v5_deeper_dense"
+  },
+  "V6": {
+    "model_name": "v6_with_dropout_03",
+    "description": "V5 + Dropout(0.3) Regularisierung",
+    "test_accuracies_per_fold": [
+      0.7869222164154053
+    ],
+    "test_accuracy_mean": 0.7869222164154053,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v6_with_dropout_03"
+  },
+  "V7": {
+    "model_name": "v7_five_conv_blocks",
+    "description": "5 Conv-Bl\u00f6cke (mit 512-Block)",
+    "test_accuracies_per_fold": [
+      0.8235625624656677
+    ],
+    "test_accuracy_mean": 0.8235625624656677,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v7_five_conv_blocks"
+  },
+  "V8": {
+    "model_name": "v8_five_conv_dropout",
+    "description": "V7 mit Dropout(0.3)",
+    "test_accuracies_per_fold": [
+      0.7793123126029968
+    ],
+    "test_accuracy_mean": 0.7793123126029968,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v8_five_conv_dropout"
+  },
+  "V9": {
+    "model_name": "v9_with_512_dense",
+    "description": "V8 + Dense(512) f\u00fcr mehr Kapazit\u00e4t",
+    "test_accuracies_per_fold": [
+      0.822717010974884
+    ],
+    "test_accuracy_mean": 0.822717010974884,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v9_with_512_dense"
+  },
+  "BEST_CNN": {
+    "model_name": "9_conv_layer_cnn",
+    "description": "Baseline: 5 Conv-Bl\u00f6cke, Dense(256), Dropout(0.5)",
+    "test_accuracies_per_fold": [
+      0.8232806921005249
+    ],
+    "test_accuracy_mean": 0.8232806921005249,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/9_conv_layer_cnn"
+  },
+  "V10": {
+    "model_name": "v10_best_cnn_lite",
+    "description": "BEST_CNN ohne 512-Block (4 Conv-Bl\u00f6cke)",
+    "test_accuracies_per_fold": [
+      0.7404171228408813
+    ],
+    "test_accuracy_mean": 0.7404171228408813,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v10_best_cnn_lite"
+  },
+  "V11": {
+    "model_name": "v11_best_cnn_deeper_dense",
+    "description": "BEST_CNN mit Dense(512\u2192256) + Dropout(0.3)",
+    "test_accuracies_per_fold": [
+      0.7694475650787354
+    ],
+    "test_accuracy_mean": 0.7694475650787354,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v11_best_cnn_deeper_dense"
+  },
+  "V12": {
+    "model_name": "v12_with_dense_bn",
+    "description": "BEST_CNN + BatchNorm in Dense-Schicht",
+    "test_accuracies_per_fold": [
+      0.8218714594841003
+    ],
+    "test_accuracy_mean": 0.8218714594841003,
+    "test_accuracy_std": 0.0,
+    "best_fold_idx": 0,
+    "logs_directory": "./../logs/v12_with_dense_bn"
+  }
+}
