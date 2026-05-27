@@ -209,3 +209,4 @@ __marimo__/
 data/
 logs/
 tf-gpu-env/
+torch-gpu-env/
