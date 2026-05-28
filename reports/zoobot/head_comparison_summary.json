@@ -1,0 +1,38 @@
+[
+  {
+    "run_name": "zoobot_deep_regularized_frozen",
+    "head_variant": "deep_regularized",
+    "use_finetuning": false,
+    "test_accuracy": 0.8906426155580609,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  },
+  {
+    "run_name": "zoobot_baseline_frozen",
+    "head_variant": "baseline",
+    "use_finetuning": false,
+    "test_accuracy": 0.8889515219842165,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  },
+  {
+    "run_name": "zoobot_wide_bn_frozen",
+    "head_variant": "wide_bn",
+    "use_finetuning": false,
+    "test_accuracy": 0.8875422773393461,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  },
+  {
+    "run_name": "zoobot_layernorm_silu_frozen",
+    "head_variant": "layernorm_silu",
+    "use_finetuning": false,
+    "test_accuracy": 0.8816234498308907,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  }
+]
