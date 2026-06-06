@@ -1,0 +1,56 @@
+[
+  {
+    "run_name": "zoobot_wide_bn_finetune_20260605_153402_190643",
+    "head_variant": "wide_bn",
+    "use_finetuning": true,
+    "test_accuracy": 0.8982525366403608,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  },
+  {
+    "run_name": "zoobot_dense_finetune_20260605_153402_190643",
+    "head_variant": "dense",
+    "use_finetuning": true,
+    "test_accuracy": 0.8959977452085682,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  },
+  {
+    "run_name": "zoobot_deep_regularized_finetune_20260605_153402_190643",
+    "head_variant": "deep_regularized",
+    "use_finetuning": true,
+    "test_accuracy": 0.8945885005636979,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  },
+  {
+    "run_name": "zoobot_layernorm_silu_finetune_20260605_153402_190643",
+    "head_variant": "layernorm_silu",
+    "use_finetuning": true,
+    "test_accuracy": 0.8943066516347238,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  },
+  {
+    "run_name": "zoobot_baseline_finetune_20260605_153402_190643",
+    "head_variant": "baseline",
+    "use_finetuning": true,
+    "test_accuracy": 0.8920518602029313,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  },
+  {
+    "run_name": "zoobot_dense_only_finetune_20260605_153402_190643",
+    "head_variant": "dense_only",
+    "use_finetuning": true,
+    "test_accuracy": 0.8864148816234498,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  }
+]

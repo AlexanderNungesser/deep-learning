@@ -1,0 +1,11 @@
+[
+  {
+    "run_name": "zoobot_dense_only_finetune_20260606_142145_646537",
+    "head_variant": "dense_only",
+    "use_finetuning": true,
+    "test_accuracy": 0.8807779030439684,
+    "num_test_samples": 3548,
+    "num_train_samples": 11350,
+    "num_val_samples": 2838
+  }
+]
