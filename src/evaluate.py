@@ -133,14 +133,15 @@ def plot_training_history(
     save_dir: str | None = None,
 ) -> None:
     """
-    Plottet Accuracy- und Loss-Kurven fuer alle Folds in einem gemeinsamen Bild.
+    Plottet Trainings- und Validierungs-Accuracy sowie Loss-Kurven 
+    fuer alle Folds in einem gemeinsamen Bild.
  
     Folds, bei denen das Modell geladen wurde (history == None),
     werden automatisch uebersprungen.
  
     Parameters
     ----------
-    fold_histories : list  — Ausgabe von run_training()
+    fold_histories : list       — Ausgabe von run_training()
     save_dir       : str | None — Ordner zum Speichern des Plots
     """
     # Nur Folds mit echten History-Objekten
@@ -153,16 +154,41 @@ def plot_training_history(
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
  
     for fold_idx, history in valid:
-        label = f"Fold {fold_idx + 1}"
-        axes[0].plot(history.history["val_accuracy"], label=label)
-        axes[1].plot(history.history["val_loss"],     label=label)
+        # Fallback, falls die Metrik 'acc' statt 'accuracy' heißt
+        acc_key = 'accuracy' if 'accuracy' in history.history else 'acc'
+        val_acc_key = 'val_accuracy' if 'val_accuracy' in history.history else 'val_acc'
+
+        ### Subplot 1: Accuracy ###
+        axes[0].plot(
+            history.history[acc_key], 
+            linestyle='-', 
+            label=f"Fold {fold_idx + 1} Train"
+        )
+        axes[0].plot(
+            history.history[val_acc_key], 
+            linestyle='-', 
+            label=f"Fold {fold_idx + 1} Val"
+        )
  
-    axes[0].set_title("Validation Accuracy pro Fold")
+        ### Subplot 2: Loss ###
+        axes[1].plot(
+            history.history["loss"], 
+            linestyle='-', 
+            label=f"Fold {fold_idx + 1} Train"
+        )
+        axes[1].plot(
+            history.history["val_loss"],     
+            linestyle='-', 
+            label=f"Fold {fold_idx + 1} Val"
+        )
+ 
+    # Titel und Achsenbeschriftungen anpassen
+    axes[0].set_title("Accuracy pro Fold (Train vs. Val)")
     axes[0].set_xlabel("Epoche")
     axes[0].set_ylabel("Accuracy")
     axes[0].legend()
  
-    axes[1].set_title("Validation Loss pro Fold")
+    axes[1].set_title("Loss pro Fold (Train vs. Val)")
     axes[1].set_xlabel("Epoche")
     axes[1].set_ylabel("Loss")
     axes[1].legend()
