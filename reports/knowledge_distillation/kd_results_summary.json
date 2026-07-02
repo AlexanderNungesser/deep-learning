@@ -1,0 +1,58 @@
+{
+  "config": {
+    "temperature": 5.0,
+    "alpha": 0.1,
+    "epochs": 100,
+    "batch_size": 32,
+    "lr": 0.001
+  },
+  "students": {
+    "S1_Nano": {
+      "params_M": 0.063626,
+      "test_accuracy_pct": 78.10033821871477,
+      "vs_teacher": -11.02,
+      "vs_s1_best": -4.26
+    },
+    "S2_Small": {
+      "params_M": 0.251146,
+      "test_accuracy_pct": 78.69222096956031,
+      "vs_teacher": -10.43,
+      "vs_s1_best": -3.67
+    },
+    "S3_Medium": {
+      "params_M": 0.619178,
+      "test_accuracy_pct": 83.99098083427283,
+      "vs_teacher": -5.13,
+      "vs_s1_best": 1.63
+    },
+    "S4_Base": {
+      "params_M": 1.096362,
+      "test_accuracy_pct": 84.16009019165726,
+      "vs_teacher": -4.96,
+      "vs_s1_best": 1.8
+    },
+    "S5_Large": {
+      "params_M": 1.244458,
+      "test_accuracy_pct": 84.18827508455468,
+      "vs_teacher": -4.93,
+      "vs_s1_best": 1.83
+    },
+    "S6_XL": {
+      "params_M": 1.835562,
+      "test_accuracy_pct": 85.23111612175873,
+      "vs_teacher": -3.89,
+      "vs_s1_best": 2.87
+    },
+    "S7_Max": {
+      "params_M": 2.032682,
+      "test_accuracy_pct": 83.34272829763248,
+      "vs_teacher": -5.78,
+      "vs_s1_best": 0.98
+    }
+  },
+  "reference": {
+    "teacher_acc": 89.12,
+    "s1_best_acc": 82.36,
+    "s1_best_params_M": 2.492
+  }
+}
